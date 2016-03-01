@@ -7,6 +7,10 @@
 
 import json
 import codecs
+import time
+
+ISOTIMEFORMAT='%Y%m%d%H%M%S'
+filename = "scrapyed_data_utf8_" + str(time.strftime(ISOTIMEFORMAT)) + ".json"
 
 class LiaoxuefengpythontutorialPipeline(object):
     def process_item(self, item, spider):
@@ -16,7 +20,8 @@ class LiaoxuefengpythontutorialPipeline(object):
 class JsonWithEncodingPipeline(object):
 
     def __init__(self):
-        self.file = codecs.open('scrapyed_data_utf8.json', 'w', encoding='utf-8')
+        self.file = codecs.open(filename, 'w', encoding='utf-8')
+        #self.file = codecs.open('scrapyed_data_utf8.json', 'w', encoding='utf-8')
 
     def process_item(self, item, spider):
         line = json.dumps(dict(item), ensure_ascii=False) + "\n"
