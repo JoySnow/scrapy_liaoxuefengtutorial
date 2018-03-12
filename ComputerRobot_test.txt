@@ -1,0 +1,5 @@
+ComputerRobot_test
+
+the most start of Computer Robot with Python
+
+So, we create the first version as said by http://blog.csdn.net/wlqingwei/article/details/46331809, totally copy from it, and let's see the results.
